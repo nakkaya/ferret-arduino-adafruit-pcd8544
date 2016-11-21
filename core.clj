@@ -59,7 +59,7 @@
   "Adafruit_PCD8544 *s = scr.cast<Pointer>()->pointer<Adafruit_PCD8544>();
 
    if (msg.is_type(runtime::type::Number))
-     s->println(msg.to<number_t>());
+     s->print(msg.to<float>());
    else if (msg.is_type(runtime::type::String)){
      char buff [80] = {0};
      int idx = 0;
