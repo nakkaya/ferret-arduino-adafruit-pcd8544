@@ -58,9 +58,12 @@
 (defn print [scr msg]
   "Adafruit_PCD8544 *s = scr.cast<Pointer>()->pointer<Adafruit_PCD8544>();
 
-   if (msg.is_type(runtime::type::Number))
-     s->print(msg.to<float>());
-   else if (msg.is_type(runtime::type::String)){
+   if (msg.is_type(runtime::type::Number)){
+     if (msg.cast<Number>()->denominator() == 1)
+       s->print(msg.to<number_t>());
+     else
+       s->print(msg.to<float>());
+   }else if (msg.is_type(runtime::type::String)){
      char buff [80] = {0};
      int idx = 0;
      FERRET_ITERATE(msg,it){
