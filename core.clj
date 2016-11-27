@@ -1,7 +1,7 @@
 (native-header "Adafruit_GFX.h"
                "Adafruit_PCD8544.h")
 
-(defmacro define [sclk din dc cs rst]
+(defmacro device [sclk din dc cs rst]
   (let [lcd-sym (gensym)
         lcd-dec (str "Adafruit_PCD8544 " lcd-sym
                      " = Adafruit_PCD8544(" sclk ", " din ", " dc ", " cs ", " rst ");")]
