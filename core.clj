@@ -59,10 +59,10 @@
   "Adafruit_PCD8544 *s = scr.cast<Pointer>()->pointer<Adafruit_PCD8544>();
 
    if (msg.is_type(runtime::type::Number)){
-     if (msg.cast<Number>()->denominator() == 1)
+     if (runtime::abs(msg.to<number_t>() - msg.to<real_t>()) < FERRET_REAL_EPSILON)
        s->print(msg.to<number_t>());
      else
-       s->print(msg.to<float>());
+       s->print(msg.to<real_t>());
    }else if (msg.is_type(runtime::type::String)){
      char buff [80] = {0};
      int idx = 0;
