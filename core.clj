@@ -49,8 +49,8 @@
    else if (msg.is_type(runtime::type::String)){
      char buff [80] = {0};
      int idx = 0;
-     FERRET_ITERATE(msg,it){
-      buff[idx++] = runtime::first(it).to<char>();
+     for(auto it : runtime::range(msg)){
+      buff[idx++] = it.to<char>();
      }
      s->println(buff);
    }")
@@ -66,8 +66,8 @@
    }else if (msg.is_type(runtime::type::String)){
      char buff [80] = {0};
      int idx = 0;
-     FERRET_ITERATE(msg,it){
-      buff[idx++] = runtime::first(it).to<char>();
+     for(auto it : runtime::range(msg)){
+      buff[idx++] = it.to<char>();
      }
      s->print(buff);
    }")
