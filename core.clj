@@ -21,7 +21,7 @@
 (defn text-size [scr size]
   "Adafruit_PCD8544 *s = pointer::to_pointer<Adafruit_PCD8544>(scr);
    number_t _size = number::to<number_t>(size);
-   s->setContrast(_size);")
+   s->setTextSize(_size);")
 
 (defn text-color-black [scr]
   "Adafruit_PCD8544 *s = pointer::to_pointer<Adafruit_PCD8544>(scr);
