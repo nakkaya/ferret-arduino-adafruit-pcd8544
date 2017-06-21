@@ -47,12 +47,9 @@
    if (msg.is_type(runtime::type::number))
      s->println(number::to<number_t>(msg));
    else if (msg.is_type(runtime::type::string)){
-     char buff [80] = {0};
-     int idx = 0;
-     for(auto it : runtime::range(msg)){
-      buff[idx++] = number::to<char>(it);
+     for(auto const& it : runtime::range(msg)){
+      s->print(number::to<char>(it));
      }
-     s->println(buff);
    }")
 
 (defn print [scr msg]
