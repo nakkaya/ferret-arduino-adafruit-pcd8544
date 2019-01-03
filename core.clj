@@ -44,10 +44,10 @@
 (defn println [scr msg]
   "Adafruit_PCD8544 *s = pointer::to_pointer<Adafruit_PCD8544>(scr);
 
-   if (msg.is_type(runtime::type::number))
+   if (msg.is_type(type_id<number>))
      s->println(number::to<number_t>(msg));
-   else if (msg.is_type(runtime::type::string)){
-     for(auto const& it : runtime::range(msg)){
+   else if (msg.is_type(type_id<string>)){
+     for_each(it, msg){
       s->print(number::to<char>(it));
      }
    }")

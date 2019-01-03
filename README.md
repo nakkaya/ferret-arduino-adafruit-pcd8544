@@ -20,10 +20,13 @@ Both available via Arduino library manager.
     ;; pin 5 - Data/Command select (D/C)
     ;; pin 4 - LCD chip select (CS)
     ;; pin 3 - LCD reset (RST)
-    (def screen (lcd/device 7 6 5 4 3))
+    (def scr (lcd/device 7 6 5 4 3))
 
-    (lcd/clear   screen)
-    (lcd/cursor  screen 0 0)
-    (lcd/println screen "Hello World.")
+    (lcd/begin    scr)
+    (lcd/contrast scr 50)
+    (lcd/clear    scr)
+    (lcd/cursor   scr 0 0)
+    (lcd/println  scr "Hello World")
+    (lcd/display  scr)
 
     (forever (sleep 100))
