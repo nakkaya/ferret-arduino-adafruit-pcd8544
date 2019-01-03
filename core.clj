@@ -50,6 +50,7 @@
      for_each(it, msg){
       s->print(number::to<char>(it));
      }
+     s->print(\"\\n\");
    }")
 
 (defn print [scr msg]
