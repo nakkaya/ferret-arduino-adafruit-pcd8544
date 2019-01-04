@@ -81,3 +81,11 @@
    number_t _y1 = number::to<real_t>(y1);
    number_t _y2 = number::to<real_t>(y2);
    s->drawLine(_x1, _y1,_x2,_y2,BLACK);")
+
+(defn draw-fill-rect-black [scr x y w h]
+  "Adafruit_PCD8544 *s = pointer::to_pointer<Adafruit_PCD8544>(scr);
+   number_t _x = number::to<real_t>(x);
+   number_t _y = number::to<real_t>(y);
+   number_t _w = number::to<real_t>(w);
+   number_t _h = number::to<real_t>(h);
+   s->fillRect(_x, _y, _w, _h, BLACK);")
