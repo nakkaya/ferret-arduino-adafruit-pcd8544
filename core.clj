@@ -40,7 +40,7 @@
      if (runtime::abs(number::to<number_t>(msg) - number::to<real_t>(msg)) < FERRET_REAL_EPSILON)
        s->print(number::to<number_t>(msg));
      else
-       s->print(number::to<real_t>(msg));
+       s->print(number::to<real_t>(msg), real_precision);
    else if (msg.is_type(type_id<string>)){
      for_each(it, msg){
       s->print(number::to<char>(it));
